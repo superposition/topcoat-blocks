@@ -9,5 +9,5 @@ cd "$workspace_dir"
 cargo fmt --all -- --check
 cargo test --workspace --all-features
 cargo clippy --workspace --all-targets --all-features --locked -- -D warnings
+"$workspace_dir/scripts/release-smoke"
 "$workspace_dir/.tools/bin/coatcheck" test
-
