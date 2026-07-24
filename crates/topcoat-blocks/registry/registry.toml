@@ -1,0 +1,3 @@
+# Custom Topcoat UI registry shipped by the `topcoat-blocks` crate.
+version = 1
+

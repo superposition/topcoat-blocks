@@ -1,0 +1,22 @@
+[package]
+name = "topcoat-blocks"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+rust-version.workspace = true
+repository.workspace = true
+description = "Accessible, copy-to-own UI blocks for Topcoat."
+keywords = ["topcoat", "components", "ui", "forms"]
+categories = ["web-programming"]
+include = [
+    "registry/**/*.rs",
+    "registry/**/*.toml",
+    "src/**/*.rs",
+]
+
+[package.metadata.topcoat-ui]
+registry = "registry"
+
+[lints]
+workspace = true
+

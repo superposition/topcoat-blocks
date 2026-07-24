@@ -1,0 +1,11 @@
+/target/
+/.tools/
+/.coatcheck/
+/node_modules/
+
+# Installed by `topcoat ui` for the workbench. Registry source remains canonical.
+/apps/workbench/components.toml
+/apps/workbench/styles.css
+/apps/workbench/src/components.rs
+/apps/workbench/src/components/
+
