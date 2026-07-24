@@ -1,0 +1,13 @@
+#!/usr/bin/env sh
+set -eu
+
+workspace_dir=$(CDPATH= cd -- "$(dirname -- "$0")/.." && pwd)
+
+"$workspace_dir/scripts/bootstrap"
+
+cd "$workspace_dir"
+cargo fmt --all -- --check
+cargo test --workspace --all-features
+cargo clippy --workspace --all-targets --all-features --locked -- -D warnings
+"$workspace_dir/.tools/bin/coatcheck" test
+

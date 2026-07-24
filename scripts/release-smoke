@@ -1,0 +1,16 @@
+#!/usr/bin/env sh
+set -eu
+
+workspace_dir=$(CDPATH= cd -- "$(dirname -- "$0")/.." && pwd)
+staging_dir=$(mktemp -d "${TMPDIR:-/tmp}/topcoat-blocks-smoke.XXXXXX")
+
+cleanup() {
+  rm -rf "$staging_dir"
+}
+trap cleanup EXIT INT TERM
+
+cd "$workspace_dir"
+cargo package -p topcoat-blocks --allow-dirty
+
+printf '%s\n' "Package smoke passed; temporary consumer staging: $staging_dir"
+

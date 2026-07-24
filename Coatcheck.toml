@@ -1,0 +1,16 @@
+version = 1
+name = "Topcoat Blocks"
+
+[host]
+command = ["env", "HOST=127.0.0.1", "PORT=3201", "./.tools/bin/topcoat", "dev", "--package", "topcoat-blocks-workbench"]
+url = "http://127.0.0.1:3201"
+health = "/health"
+manifest = "/__coatcheck/manifest.json"
+startup_timeout_seconds = 120
+
+[test]
+story_globs = ["coatcheck/**/*.spec.ts"]
+artifacts = ".coatcheck/artifacts"
+timeout_ms = 30000
+axe_impacts = ["serious", "critical"]
+

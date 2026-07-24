@@ -1,0 +1,40 @@
+#!/usr/bin/env sh
+set -eu
+
+workspace_dir=$(CDPATH= cd -- "$(dirname -- "$0")/.." && pwd)
+tools_dir="$workspace_dir/.tools"
+topcoat_bin="$tools_dir/bin/topcoat"
+coatcheck_bin="$tools_dir/bin/coatcheck"
+workbench_dir="$workspace_dir/apps/workbench"
+
+if [ ! -x "$topcoat_bin" ]; then
+  cargo install topcoat-cli \
+    --version 0.4.0 \
+    --locked \
+    --root "$tools_dir"
+fi
+
+if [ ! -x "$coatcheck_bin" ]; then
+  cargo install coatcheck \
+    --version 0.2.0 \
+    --locked \
+    --root "$tools_dir"
+fi
+
+if [ ! -f "$workbench_dir/components.toml" ]; then
+  (
+    cd "$workbench_dir"
+    "$topcoat_bin" ui init --theme neutral
+  )
+fi
+
+cd "$workspace_dir"
+bun install
+
+chromium_path=$(bun -e "import { chromium } from '@playwright/test'; process.stdout.write(chromium.executablePath())")
+if [ ! -x "$chromium_path" ]; then
+  bunx playwright install chromium
+fi
+
+printf '%s\n' "Topcoat Blocks tooling and browser dependencies are ready."
+

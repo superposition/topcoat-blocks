@@ -1,6 +1,9 @@
 [workspace]
 resolver = "3"
-members = ["crates/topcoat-blocks"]
+members = [
+    "apps/workbench",
+    "crates/topcoat-blocks",
+]
 
 [workspace.package]
 version = "0.1.0"
@@ -9,10 +12,16 @@ license = "MIT"
 rust-version = "1.95"
 repository = "https://github.com/superposition/topcoat-blocks"
 
+[workspace.dependencies]
+coatcheck = "=0.2.0"
+serde = "1"
+tokio = "1"
+topcoat = "0.4.0"
+topcoat-blocks = { path = "crates/topcoat-blocks" }
+
 [workspace.lints.rust]
 unsafe_code = "forbid"
 
 [workspace.lints.clippy]
 all = "warn"
 pedantic = "warn"
-
