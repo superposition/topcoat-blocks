@@ -6,11 +6,8 @@ test("workbench exposes the isolated review frame", async ({ page }) => {
   await expect(
     page.getByRole("heading", { name: "Topcoat Blocks" })
   ).toBeVisible()
-  await expect(
-    page.getByRole("link", { name: "Open isolated frame" })
-  ).toHaveAttribute(
-    "href",
-    "/__coatcheck/frame?story=workbench-overview&scene=desktop-light"
+  const defaultStory = page.locator(
+    'a[href="/__coatcheck/frame?story=sign-in-default&scene=desktop-light"]'
   )
+  await expect(defaultStory).toContainText("Sign-in form")
 })
-

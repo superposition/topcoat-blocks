@@ -28,6 +28,11 @@ if [ ! -f "$workbench_dir/components.toml" ]; then
   )
 fi
 
+(
+  cd "$workbench_dir"
+  "$topcoat_bin" ui add sign_in_form --registry topcoat-blocks --overwrite
+)
+
 cd "$workspace_dir"
 bun install
 
@@ -37,4 +42,3 @@ if [ ! -x "$chromium_path" ]; then
 fi
 
 printf '%s\n' "Topcoat Blocks tooling and browser dependencies are ready."
-
