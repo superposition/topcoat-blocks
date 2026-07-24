@@ -32,6 +32,7 @@ fi
   cd "$workbench_dir"
   "$topcoat_bin" ui add sign_in_form --registry topcoat-blocks --overwrite
 )
+rustfmt --edition 2024 "$workbench_dir/src/components.rs"
 
 cd "$workspace_dir"
 bun install
