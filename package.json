@@ -1,0 +1,14 @@
+{
+  "name": "topcoat-blocks",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test:coatcheck": "./.tools/bin/coatcheck test",
+    "test:coatcheck:headed": "./.tools/bin/coatcheck test --headed"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "4.12.1",
+    "@playwright/test": "1.61.1"
+  }
+}
+

@@ -1,0 +1,26 @@
+#!/usr/bin/env sh
+set -eu
+
+workspace_dir=$(CDPATH= cd -- "$(dirname -- "$0")/.." && pwd)
+
+cd "$workspace_dir"
+package_files=$(cargo package -p topcoat-blocks --allow-dirty --list)
+
+case "$package_files" in
+  *"apps/"*|*"coatcheck/"*|*"Coatcheck.toml"*|*"package.json"*|*"scripts/"*|*"skills/"*)
+    printf '%s\n' "The published crate would contain review-harness files." >&2
+    exit 1
+    ;;
+esac
+
+case "$package_files" in
+  *"registry/components/sign_in_form.rs"* ) ;;
+  *)
+    printf '%s\n' "The sign-in registry source is missing from the package." >&2
+    exit 1
+    ;;
+esac
+
+cargo package -p topcoat-blocks --allow-dirty
+
+printf '%s\n' "Package smoke passed: registry source is isolated from the review harness."

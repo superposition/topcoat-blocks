@@ -1,3 +1,11 @@
 # Custom Topcoat UI registry shipped by the `topcoat-blocks` crate.
 version = 1
 
+[components.sign_in_form]
+source = "components/sign_in_form.rs"
+dependencies = [
+    { registry = "topcoat", name = "button" },
+    { registry = "topcoat", name = "card" },
+    { registry = "topcoat", name = "input" },
+    { registry = "topcoat", name = "label" },
+]
