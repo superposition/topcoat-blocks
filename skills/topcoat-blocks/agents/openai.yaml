@@ -1,0 +1,4 @@
+interface:
+  display_name: "Topcoat Blocks"
+  short_description: "Build and validate reusable Topcoat UI blocks"
+  default_prompt: "Use $topcoat-blocks to build and validate a reusable Topcoat UI block with Coatcheck."

@@ -7,7 +7,7 @@ cd "$workspace_dir"
 package_files=$(cargo package -p topcoat-blocks --allow-dirty --list)
 
 case "$package_files" in
-  *"apps/"*|*"coatcheck/"*|*"Coatcheck.toml"*|*"package.json"*|*"scripts/"*)
+  *"apps/"*|*"coatcheck/"*|*"Coatcheck.toml"*|*"package.json"*|*"scripts/"*|*"skills/"*)
     printf '%s\n' "The published crate would contain review-harness files." >&2
     exit 1
     ;;

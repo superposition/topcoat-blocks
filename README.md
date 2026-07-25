@@ -82,9 +82,17 @@ The full validation gate is:
 - `apps/workbench` renders installed registry source in Topcoat.
 - `coatcheck` contains project-specific semantic browser checks.
 - `reviews` records selected, approved visual evidence.
+- `skills/topcoat-blocks` is the reusable Codex development workflow.
 
 See [CONTRIBUTING.md](CONTRIBUTING.md) for the acceptance gate and
 [docs/roadmap.md](docs/roadmap.md) for the block sequence.
+
+## Codex skill
+
+The versioned `$topcoat-blocks` skill keeps future blocks on the same registry,
+workbench, Coatcheck, package-isolation, and release path. Install it into a
+local Codex environment by linking `skills/topcoat-blocks` from this checkout
+under `~/.codex/skills/topcoat-blocks`.
 
 ## License
 
