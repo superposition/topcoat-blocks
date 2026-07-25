@@ -13,7 +13,7 @@ rust-version = "1.95"
 repository = "https://github.com/superposition/topcoat-blocks"
 
 [workspace.dependencies]
-coatcheck = "=0.2.0"
+coatcheck = "=0.2.1"
 serde = "1"
 tokio = "1"
 topcoat = "0.4.0"

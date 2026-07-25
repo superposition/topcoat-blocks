@@ -5,7 +5,9 @@ workspace_dir=$(CDPATH= cd -- "$(dirname -- "$0")/.." && pwd)
 tools_dir="$workspace_dir/.tools"
 topcoat_bin="$tools_dir/bin/topcoat"
 coatcheck_bin="$tools_dir/bin/coatcheck"
+coatcheck_version="0.2.1"
 workbench_dir="$workspace_dir/apps/workbench"
+installed_coatcheck_version=$("$coatcheck_bin" --version 2>/dev/null || true)
 
 if [ ! -x "$topcoat_bin" ]; then
   cargo install topcoat-cli \
@@ -14,10 +16,11 @@ if [ ! -x "$topcoat_bin" ]; then
     --root "$tools_dir"
 fi
 
-if [ ! -x "$coatcheck_bin" ]; then
+if [ ! -x "$coatcheck_bin" ] || [ "$installed_coatcheck_version" != "coatcheck $coatcheck_version" ]; then
   cargo install coatcheck \
-    --version 0.2.0 \
+    --version "$coatcheck_version" \
     --locked \
+    --force \
     --root "$tools_dir"
 fi
 

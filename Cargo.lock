@@ -292,9 +292,9 @@ checksum = "c8d4a3bb8b1e0c1050499d1815f5ab16d04f0959b233085fb31653fbfc9d98f9"
 
 [[package]]
 name = "coatcheck"
-version = "0.2.0"
+version = "0.2.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "914c41ca8613fdda651bf3a0215ee5619094e6b6077ff9cfc52f476f68ab9c9e"
+checksum = "248c20237875009132426670860c515ba0cff8e5d1f5a1dac5267d6a6e160760"
 dependencies = [
  "clap",
  "serde",
