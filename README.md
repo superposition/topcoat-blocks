@@ -27,7 +27,7 @@ Add the registry carrier and Topcoat to the consuming package:
 ```toml
 [dependencies]
 topcoat = { version = "0.4.0", features = ["tailwind", "ui"] }
-topcoat-blocks = { git = "https://github.com/superposition/topcoat-blocks" }
+topcoat-blocks = "0.1.0"
 ```
 
 Initialize Topcoat UI once, then copy the block and its Topcoat primitives into
