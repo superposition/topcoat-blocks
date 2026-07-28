@@ -31,10 +31,22 @@ if [ ! -f "$workbench_dir/components.toml" ]; then
   )
 fi
 
-(
-  cd "$workbench_dir"
-  "$topcoat_bin" ui add sign_in_form --registry topcoat-blocks --overwrite
-)
+for component in \
+  sign_in_form \
+  product_card \
+  catalog_filter_bar \
+  cart_line_item \
+  order_totals \
+  shipping_address_form \
+  payment_route_selector \
+  payment_status \
+  order_receipt
+do
+  (
+    cd "$workbench_dir"
+    "$topcoat_bin" ui add "$component" --registry topcoat-blocks --overwrite
+  )
+done
 rustfmt --edition 2024 "$workbench_dir/src/components.rs"
 
 cd "$workspace_dir"
