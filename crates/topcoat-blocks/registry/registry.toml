@@ -9,3 +9,67 @@ dependencies = [
     { registry = "topcoat", name = "input" },
     { registry = "topcoat", name = "label" },
 ]
+
+[components.product_card]
+source = "components/product_card.rs"
+dependencies = [
+    { registry = "topcoat", name = "badge" },
+    { registry = "topcoat", name = "button" },
+    { registry = "topcoat", name = "card" },
+]
+
+[components.catalog_filter_bar]
+source = "components/catalog_filter_bar.rs"
+dependencies = [
+    { registry = "topcoat", name = "button" },
+    { registry = "topcoat", name = "input" },
+    { registry = "topcoat", name = "label" },
+    { registry = "topcoat", name = "select" },
+]
+
+[components.cart_line_item]
+source = "components/cart_line_item.rs"
+dependencies = [
+    { registry = "topcoat", name = "button" },
+    { registry = "topcoat", name = "input" },
+    { registry = "topcoat", name = "label" },
+]
+
+[components.order_totals]
+source = "components/order_totals.rs"
+dependencies = [
+    { registry = "topcoat", name = "button" },
+    { registry = "topcoat", name = "card" },
+]
+
+[components.shipping_address_form]
+source = "components/shipping_address_form.rs"
+dependencies = [
+    { registry = "topcoat", name = "button" },
+    { registry = "topcoat", name = "input" },
+    { registry = "topcoat", name = "label" },
+]
+
+[components.payment_route_selector]
+source = "components/payment_route_selector.rs"
+dependencies = [
+    { registry = "topcoat", name = "button" },
+    { registry = "topcoat", name = "card" },
+]
+
+[components.payment_status]
+source = "components/payment_status.rs"
+dependencies = [
+    { registry = "topcoat", name = "badge" },
+    { registry = "topcoat", name = "button" },
+    { registry = "topcoat", name = "card" },
+    { registry = "topcoat", name = "progress" },
+]
+
+[components.order_receipt]
+source = "components/order_receipt.rs"
+dependencies = [
+    { registry = "topcoat", name = "badge" },
+    { registry = "topcoat", name = "button" },
+    { registry = "topcoat", name = "card" },
+]

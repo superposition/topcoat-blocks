@@ -7,4 +7,9 @@ fn main() {
         .input("workbench.css")
         .render()
         .expect("the workbench Tailwind stylesheet builds");
+
+    topcoat::icon::iconify::BuildConfig::new()
+        .icon_set("feather")
+        .stage()
+        .expect("the workbench icon set stages");
 }

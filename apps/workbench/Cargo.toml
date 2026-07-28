@@ -10,11 +10,11 @@ publish = false
 coatcheck.workspace = true
 serde = { workspace = true, features = ["derive"] }
 tokio = { workspace = true, features = ["macros", "rt-multi-thread"] }
-topcoat = { workspace = true, features = ["tailwind", "ui"] }
+topcoat = { workspace = true, features = ["icon-iconify", "tailwind", "ui"] }
 topcoat-blocks.workspace = true
 
 [build-dependencies]
-topcoat = { version = "0.4.0", default-features = false, features = ["tailwind"] }
+topcoat = { version = "0.4.0", default-features = false, features = ["icon-iconify", "tailwind"] }
 
 [lints]
 workspace = true
