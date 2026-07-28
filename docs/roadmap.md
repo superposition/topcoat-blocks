@@ -43,6 +43,21 @@ database, charting library, or client-side state framework.
 - [ ] Invite-members form
 - [ ] Destructive confirmation flow
 
+### 5. Commerce
+
+- [x] Product card
+- [x] Catalog filter bar
+- [x] Cart line item
+- [x] Order totals
+- [x] Shipping address form
+- [x] Payment route selector
+- [x] Payment status
+- [x] Order receipt
+
+Commerce blocks preserve native forms and read-only recovery surfaces. The
+consumer owns products, pricing, tax, inventory, wallets, settlement,
+fulfillment, authentication, and every server-side transition.
+
 ## Selection rule
 
 A block moves into active development when its primitive dependencies exist,

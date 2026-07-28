@@ -13,13 +13,25 @@ case "$package_files" in
     ;;
 esac
 
-case "$package_files" in
-  *"registry/components/sign_in_form.rs"* ) ;;
-  *)
-    printf '%s\n' "The sign-in registry source is missing from the package." >&2
-    exit 1
-    ;;
-esac
+for component in \
+  sign_in_form \
+  product_card \
+  catalog_filter_bar \
+  cart_line_item \
+  order_totals \
+  shipping_address_form \
+  payment_route_selector \
+  payment_status \
+  order_receipt
+do
+  case "$package_files" in
+    *"registry/components/$component.rs"* ) ;;
+    *)
+      printf '%s\n' "The $component registry source is missing from the package." >&2
+      exit 1
+      ;;
+  esac
+done
 
 cargo package -p topcoat-blocks --allow-dirty
 

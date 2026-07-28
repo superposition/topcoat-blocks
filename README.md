@@ -16,9 +16,22 @@ published crate. `./scripts/release-smoke` enforces that boundary.
 
 ## Status
 
-The first block is `sign_in_form`: a portable server POST form with optional
-recovery and account-creation paths, a hidden-field slot, and no authentication
-provider assumptions.
+The registry includes a provider-neutral authentication block and a complete
+commerce presentation set:
+
+- `sign_in_form`
+- `product_card`
+- `catalog_filter_bar`
+- `cart_line_item`
+- `order_totals`
+- `shipping_address_form`
+- `payment_route_selector`
+- `payment_status`
+- `order_receipt`
+
+The blocks own semantic markup and ordinary browser behavior. Applications own
+routes, hidden identifiers, CSRF, catalog data, money calculations, inventory,
+wallets, settlement, shipping, tax, persistence, and policy.
 
 ## Install
 
@@ -36,6 +49,14 @@ the application:
 ```sh
 topcoat ui init --theme neutral
 topcoat ui add sign_in_form --registry topcoat-blocks
+```
+
+Install a commerce block the same way:
+
+```sh
+topcoat ui add product_card --registry topcoat-blocks
+topcoat ui add cart_line_item --registry topcoat-blocks
+topcoat ui add payment_status --registry topcoat-blocks
 ```
 
 The installed Rust belongs to the application. The registry dependency remains
